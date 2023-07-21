@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body{
+        @apply font-[Montserrat];
+    }
+    li{
+        @apply cursor-pointer;
+    }
+}
+
+.active{
+    color: #fff;
+}
+.navhover::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 4px;
+    background: #fff;
+    transition: .4s;
+}
+.navhover:hover::after{
+    width: 100%;
+}
