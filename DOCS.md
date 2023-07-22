@@ -1,6 +1,5 @@
 ** Technologies used:
 - React.js (to create UI)
-- React hooks (useEffect, useState, useContext, useLocation)
 - HTML5 (for creating and structuring content)
 - Tailwind, CSS3
 - react-router-dom (for handling routing and navigation)
