@@ -6,20 +6,24 @@ import Footer from "./components/footer/Footer";
 import About from "./pages/About";
 import Product from "./pages/Product";
 import PageNotAvailable from "./pages/PageNotAvailable";
-import { ProductContextProvider } from "./context/ProductContext";
+import SearchPage from "./pages/SearchPage";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <ProductContextProvider>
+    <QueryClientProvider client={queryClient}>
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/products/:id" element={<Product />} />
+        <Route exact path="/search/:searchTerm" element={<SearchPage />} />
         <Route path="*" element={<PageNotAvailable />} />
       </Routes>
       <Footer />
-    </ProductContextProvider>
+    </QueryClientProvider>
   );
 }
 

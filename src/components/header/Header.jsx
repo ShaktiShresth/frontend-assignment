@@ -2,9 +2,12 @@ import { Link } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
+import SearchBar from "../searchbar/SearchBar";
 
 const Header = () => {
   const [nav, setNav] = useState(false);
+
+  // click handle
   const handleClick = () => setNav(!nav);
 
   return (
@@ -23,13 +26,7 @@ const Header = () => {
         <Navbar />
 
         {/* Search bar */}
-        <div>
-          <input
-            type="text"
-            placeholder="Search item..."
-            className="py-1 px-3 rounded-[4px] w-80 text-black text-md outline-none"
-          />
-        </div>
+        <SearchBar />
       </div>
 
       {/* Hamburger */}
@@ -42,7 +39,7 @@ const Header = () => {
         className={
           !nav
             ? "hidden"
-            : "absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-center bg-[#0a192f] text-2xl"
+            : "absolute top-0 left-0 w-full h-screen flex gap-4 flex-col justify-center items-center bg-[#0a192f] text-2xl"
         }
       >
         <li>

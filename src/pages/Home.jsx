@@ -1,20 +1,24 @@
-import { useContext } from "react";
 import Card from "../components/card/Card";
 import LoaderComponent from "../components/loader/Loader";
-import { ProductContext } from "../context/ProductContext";
+import SearchBarMobile from "../components/searchbar/SearchBarMobile";
+import { UseGetAllProducts } from "../reactquery/GetProducts";
 
 const Home = () => {
-  const { products, loader } = useContext(ProductContext);
+  const { data, isLoading } = UseGetAllProducts();
 
   return (
     <div className="min-h-screen pt-20">
-      {loader ? (
+      <div>
+        <SearchBarMobile />
+      </div>
+
+      {isLoading ? (
         <div className="flex justify-center items-center">
           <LoaderComponent />
         </div>
       ) : (
         <div className="p-12 grid gap-x-5 gap-y-12 grid-cols-2 max-[430px]:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-          {products?.map((item) => (
+          {data?.map((item) => (
             <Card
               key={item.id}
               id={item.id}

@@ -8,24 +8,28 @@ const Navbar = () => {
     <nav className="w-full flex justify-between items-center">
       <ul className="flex justify-around items-center ">
         {/* Navigation Links */}
-        <li
-          className={`${
-            location.pathname === "/"
-              ? `active ${linkClasses}`
-              : `${linkClasses}`
-          }  `}
-        >
-          <Link to={"/"}>Home</Link>
-        </li>
-        <li
-          className={`${
-            location.pathname === "/about"
-              ? "active navhover px-5 hover:text-white"
-              : "navhover px-5 hover:text-white"
-          }  `}
-        >
-          <Link to="/about">About</Link>
-        </li>
+        <Link to={"/"}>
+          <li
+            className={`${
+              location.pathname === "/"
+                ? `active ${linkClasses}`
+                : `${linkClasses}`
+            }  `}
+          >
+            Home
+          </li>
+        </Link>
+        <Link to="/about">
+          <li
+            className={`${
+              location.pathname === "/about"
+                ? "active navhover px-5 hover:text-white"
+                : "navhover px-5 hover:text-white"
+            }  `}
+          >
+            About
+          </li>
+        </Link>
       </ul>
     </nav>
   );
